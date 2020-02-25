@@ -9,5 +9,8 @@ ch = input("Please enter the paint character: ")
 
 for row in range(height):
     for column in range(width):
-        print(f" {ch} ", end="")
+        if row < height//2 and column < width//2:
+            print(" * ", end="")
+        else:
+            print(f" {ch} ", end="")
     print() # Force a newline after printing a row
