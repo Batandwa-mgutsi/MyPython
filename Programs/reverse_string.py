@@ -6,5 +6,5 @@
 sentence = input("Please enter a sentence:\n")
 
 print("The string in reverse is: ", end="")
-for i in range(len(sentence), 0, -1):
+for i in range(len(sentence), 0, -1):           # range will end just before 0
     print(sentence[i-1], end='')
