@@ -28,11 +28,36 @@ def is_leap(year):
 
 
 def month_num(month_name):
-    pass
+    """Returns the number of a months, with January as month number 1"""
+    months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+    ]
+
+    return months.index(month_name)+1
 
 
 def num_days_in(month_num, year):
-    pass
+    # Febrary has 28 days normally, and 29 in a leap year
+    # April, June, September, Nov have 30 days
+    # The rest have 31 days
+
+    if month_num == 2:
+        return 29 if is_leap(year) else 28
+    if month_num == 4 or month_num == 6 or month_num == 9 or month_num == 11:
+        return 30
+
+    return 31
 
 
 def num_weeks(month_num, year):
