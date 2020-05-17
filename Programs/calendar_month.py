@@ -9,6 +9,11 @@ from math import floor
 def day_of_week(day, month, year):
     """Returns the day of the week the given date falls. 1 is for Monday, 2 for Tuesday, etc.
        Uses Zeller's congruence algorithm @see https://en.wikipedia.org/wiki/Zeller%27s_congruence."""
+
+    if month == 1 or month == 2:
+        month += 12
+        year -= 1
+
     h = (day+floor(13*(month+1)/5)+year+floor(year/4) -
          floor(year/100)+floor(year/400)) % 7
     return ((h+5) % 7)+1
