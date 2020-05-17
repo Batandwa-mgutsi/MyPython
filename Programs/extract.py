@@ -11,8 +11,7 @@ def location(block):
 
     # Make it lower case, reverse it, and make only the first letter  upper case.
     locationString = locationString.lower()[len(locationString)::-1]
-    locationString = locationString[0].upper()+locationString[1:]
-    return locationString
+    return locationString.title()
 
 
 def temperature(block):
