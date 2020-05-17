@@ -27,24 +27,24 @@ def is_leap(year):
     return False
 
 
-def month_num(month_name):
-    """Returns the number of a month, with January as month number 1"""
+def month_num(month_name: str):
+    """Returns the number of a month, with January as month number 1. It;s case insensitive."""
     months = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
+        'january',
+        'february',
+        'march',
+        'april',
+        'may',
+        'june',
+        'july',
+        'august',
+        'september',
+        'october',
+        'november',
+        'december',
     ]
 
-    return months.index(month_name)+1
+    return months.index(month_name.lower())+1
 
 
 def num_days_in(month_num, year):
