@@ -18,7 +18,7 @@ def temperature(block):
     """Returns the temperature componet in block as a real number value."""
     start = block.find('BEGIN')+6
     end = block.find('_')
-    return eval(block[start:end])
+    return float(block[start:end])
 
 
 def x_coordinate(block):
@@ -41,7 +41,7 @@ def pressure(block):
     """Returns the pressure component in block as a real number."""
     start = block.find('_')+1
     end = block.find(':')
-    return eval(block[start:end])
+    return float(block[start:end])
 
 
 def get_block(data):
