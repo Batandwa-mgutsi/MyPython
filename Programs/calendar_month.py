@@ -120,8 +120,8 @@ def week(week_num, start_day, days_in_month):
             day += 1
 
     # Render the line
-    # The first week should be padded with 2 spaces for every missing day.
-    line = ''.rjust(numberOfDaysMissing*2)
+    # The first week should be padded with 3 spaces for every missing day.
+    line = ''.rjust(numberOfDaysMissing*3)
     for iii in range(0-numberOfDaysMissing, 6-numberOfDaysMissing+1):
         if(iii < 0) or (startDate+iii > days_in_month):
             continue
@@ -133,7 +133,15 @@ def week(week_num, start_day, days_in_month):
 
 
 def main():
-    pass
+    month = input('Enter month:\n')
+    year = int(input('Enter year:\n'))
+    print(month)
+    print('Mo Tu We Th Fr Sa Su')
+    month_number = month_num(month)
+    start_day = day_of_week(1, month_number, year)
+    days_in_month = num_days_in(month_number, year)
+    for weekIndex in range(1, num_weeks(month_number, year)+1):
+        print(week(weekIndex, start_day, days_in_month))
 
 
 if __name__ == '__main__':
