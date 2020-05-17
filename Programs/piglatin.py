@@ -17,9 +17,6 @@ def transformEnglishToPiglatin(englishUnits: list):
     for unit in englishUnits:
         if(len(unit) == 0):
             continue
-        elif len(unit) == 1:
-            pigLatinUnits.append(unit)
-            continue
 
         firstChar = unit[0]
         if firstChar in CONST_VOWELS:
@@ -63,7 +60,7 @@ def transformPiglatinToEnglish(pigLatinUnits: list):
         if unit.endswith('ay'):
             hasLetterABeforeAy = False
             inBewteenConsonents = ''
-            for index in range(unit.index('ay')-len(unit)-1, -len(unit), -1):
+            for index in range(unit.index('ay')-len(unit)-1, -len(unit)-1, -1):
                 if unit[index] == 'a':
                     hasLetterABeforeAy = True
                     break
