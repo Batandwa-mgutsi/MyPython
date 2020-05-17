@@ -17,25 +17,26 @@ def transformEnglishToPiglatin(englishUnits: list):
     for unit in englishUnits:
         if(len(unit) == 0):
             continue
+        elif len(unit) == 1:
+            pigLatinUnits.append(unit)
+            continue
 
         firstChar = unit[0]
-        if len(unit) > 1 and (firstChar in CONST_VOWELS):
+        if firstChar in CONST_VOWELS:
             pigLatinUnits.append(unit + 'way')
             continue
 
-        elif len(unit) > 1 and not (unit[1] in CONST_VOWELS):
+        else:
             firstConsonents = ''
             for letter in unit:
                 if letter in CONST_VOWELS:
                     break
                 else:
                     firstConsonents += letter
-            if len(firstConsonents) > 0:
-                pigLatinWord = unit[len(firstConsonents)::]
-                pigLatinWord += 'a' + firstConsonents+'ay'
-                pigLatinUnits.append(pigLatinWord)
-        else:
-            pigLatinUnits.append(unit)
+
+            pigLatinWord = unit[len(firstConsonents)::]
+            pigLatinWord += 'a' + firstConsonents+'ay'
+            pigLatinUnits.append(pigLatinWord)
 
     return pigLatinUnits
 
