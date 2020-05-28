@@ -6,7 +6,7 @@
 def doSingleFilter(s, t1):
     output = ''
     for character in s:
-        if (t1 == 'I'):
+        if (t1 == 'l'):
             if not character.isalpha():
                 output += character
         elif (t1 == 'd'):
@@ -28,5 +28,5 @@ def filter(s, t):
 if __name__ == '__main__':
     print(filter('55 bottles of beer', 'do'))
     print(filter('55 bottles of beer', 'o'))
-    print(filter('55 bottles of beer', 'I'))
-    print(filter('55 bottles of beer', 'dI'))
+    print(filter('55 bottles of beer', 'l'))
+    print(filter('55 bottles of beer', 'dl'))
