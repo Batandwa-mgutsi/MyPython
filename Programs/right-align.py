@@ -6,7 +6,7 @@
 words = []
 longestLength = 0
 
-print('Enter strings (end with DONE):')
+print('Enter strings (end with DONE):\n')
 while True:
     wordInput = input()
     if wordInput == 'DONE':
